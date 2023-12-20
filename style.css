@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.flex {
+    display: flex;
+}
+
+.sr-only {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    overflow: hidden;
+
+    margin: -1px;
+    padding: 0px;
+    border: 0;
+    appearance: none;
+}
+
+:root {
+    --text-color: #323238;
+
+    --button-text-active: #fff;
+    --bg-button: #E1E1E6;
+    --bg-button-active: #02799D;
+
+    --tree-active: #31D843;
+    --clound-active: #0077B6;
+    --fire-active: #D00000;
+    --coffe-active: #582F0E;
+    font-size: clamp(40%, 1% + 2vw, 62.5%);
+}
+
+body {
+    display: flex;
+    height: 100vh;   
+    color: var(--text-color); 
+    font-family: 'Roboto', sans-serif;
+}
+
+section#timer_display,
+section#themes {
+    width: 50%;
+    height: 100vh;
+}
+
+section#timer_display {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div#display {
+    font-size: 13rem;
+}
+
+div#controls {
+    width: 50vh;
+    justify-content: space-between;
+}
+
+
+div#controls button {
+    border: 3px var(--text-color) solid;
+    background: transparent;
+    border-radius: 50%;
+    font-size: 2.6rem;
+    padding: 10px;
+    color: var(--text-color);
+}
+
+div#controls .ph-pause {
+    border: 3px var(--bg-button-active) solid;
+    color: var(--bg-button-active);
+}
+
+section#themes {
+    display: grid;
+    grid-template-columns: 20rem 20rem;
+    grid-template-rows: 20rem 20rem;
+    place-items: center;
+    place-content: center;
+}
+
+.tree,
+.cloud,
+.coffee,
+.fire {
+    width: 13.8rem;
+    height: 15.2rem;
+    background-color: var(--bg-button);
+    color: var(--text-color);
+    border: none;
+    border-radius: 2.5rem;
+    margin: 10px;
+    font-size: 6rem;
+}
+
+.tree.active {
+    background-color: var(--tree-active);
+}
+
+.cloud.active {
+    background-color: var(--clound-active);
+}
+
+.coffee.active {
+    background-color: var(--coffe-active);
+}
+
+.fire.active {
+    background-color: var(--fire-active);
+}
+
+.active {
+    color: var(--button-text-active);
+}
+
+/* constrols */
+.running .ph-play,
+html:not(.running) .ph-pause {
+    display: none;      
+}
